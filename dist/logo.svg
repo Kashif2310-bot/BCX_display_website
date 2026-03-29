@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <defs>
+    <linearGradient id="blueLeaf" x1="40" y1="10" x2="130" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="greenLeaf" x1="70" y1="80" x2="170" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="40%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Blue leaf (upper) - flowing from lower-left to upper-right -->
+  <path d="M95 10 C130 10, 160 35, 155 80 C150 115, 125 140, 100 160 C98 125, 92 95, 82 70 C72 48, 75 20, 95 10Z" fill="url(#blueLeaf)"/>
+  <!-- White curve separator -->
+  <path d="M100 160 C98 125, 92 95, 82 70 C72 48, 75 20, 95 10 C80 25, 78 50, 87 72 C96 95, 102 125, 105 160Z" fill="white" opacity="0.85"/>
+  <!-- Green leaf (lower) - flowing from lower-left to upper-right -->
+  <path d="M105 160 C102 125, 96 95, 87 72 C78 50, 80 25, 95 10 C65 30, 45 65, 50 105 C55 145, 75 180, 105 200 C108 180, 106 170, 105 160Z" fill="url(#greenLeaf)"/>
+  <!-- Subtle inner glow on blue leaf -->
+  <path d="M95 10 C130 10, 160 35, 155 80 C150 115, 125 140, 100 160 C98 145, 96 125, 95 110 C110 100, 130 75, 128 50 C126 30, 112 15, 95 10Z" fill="white" opacity="0.08"/>
+</svg>
