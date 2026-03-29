@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════
+   BLUECARBON-X — Global Design System
+   ══════════════════════════════════════════════ */
+
+:root {
+  --ocean-950: #060a12;
+  --ocean-900: #0a0f1a;
+  --ocean-800: #0d1b2a;
+  --ocean-700: #1b2838;
+  --ocean-600: #006994;
+  --ocean-500: #0077b6;
+  --ocean-400: #00b4d8;
+  --ocean-300: #48cae4;
+  --ocean-200: #90e0ef;
+  --eco-500: #00c896;
+  --eco-400: #34d399;
+  --eco-300: #6ee7b7;
+  --cyan-glow: #00f5d4;
+  --cyan-bright: #7df9ff;
+}
+
+/* ── Base ────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--ocean-950);
+  color: #e2e8f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ───────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ocean-950);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--ocean-500), var(--eco-500));
+  border-radius: 3px;
+}
+
+/* ── Typography ──────────────────────────────── */
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* ── Gradient Text ───────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--ocean-300) 0%, var(--cyan-glow) 30%, var(--eco-400) 60%, var(--ocean-200) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-eco {
+  background: linear-gradient(135deg, var(--eco-400) 0%, var(--cyan-glow) 50%, var(--ocean-300) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, var(--ocean-300) 0%, var(--ocean-400) 50%, var(--cyan-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass Cards ─────────────────────────────── */
+.glass-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 245, 212, 0.2);
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 245, 212, 0.1);
+  transform: translateY(-4px);
+}
+
+.glass-card-static {
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+}
+
+/* ── Glow Effects ────────────────────────────── */
+.glow-border {
+  position: relative;
+}
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--ocean-400), var(--eco-500), var(--cyan-glow));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.glow-border:hover::before {
+  opacity: 0.6;
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, var(--ocean-500), var(--eco-500));
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--eco-500), var(--cyan-glow));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 200, 150, 0.3);
+}
+.btn-primary:hover::before {
+  opacity: 1;
+}
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Section Backgrounds ─────────────────────── */
+.section-dark {
+  background: var(--ocean-950);
+}
+.section-gradient {
+  background: linear-gradient(180deg, var(--ocean-950) 0%, var(--ocean-800) 50%, var(--ocean-950) 100%);
+}
+.section-gradient-alt {
+  background: linear-gradient(180deg, var(--ocean-800) 0%, var(--ocean-950) 100%);
+}
+
+/* ── Dividers ────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,245,212,0.2), transparent);
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+/* ── Flow Line ───────────────────────────────── */
+.flow-line {
+  background: linear-gradient(180deg, var(--ocean-400), var(--eco-500), var(--cyan-glow));
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Animated Orb ────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+.orb-blue {
+  background: var(--ocean-400);
+}
+.orb-green {
+  background: var(--eco-500);
+}
+.orb-cyan {
+  background: var(--cyan-glow);
+}
+
+/* ── Particle Canvas ─────────────────────────── */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Responsive Container ────────────────────── */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding: 0 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-custom {
+    padding: 0 64px;
+  }
+}
+
+/* ── Noise Texture Overlay ───────────────────── */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+/* ── Step connector dots ─────────────────────── */
+.step-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ocean-400), var(--eco-500));
+  box-shadow: 0 0 20px rgba(0, 245, 212, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.step-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 245, 212, 0.3);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ── Counter Number ──────────────────────────── */
+.counter-value {
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
